@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fall</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Free Fall Simulator</h1>
+    <p>A simple simulator for physics 1, made by the Subaru group.</p>
+
+    Initial Velocity: 
+    <input type="text" id="iniVelocity" class="iniVelocity" placeholder="Default: 1m/s">
+    <br><br>
+
+    <label>
+        <input type="radio" name="type" id="throw" value="throw"> Throw
+    </label>
+    <label>
+        <input type="radio" name="type" id="drop" value="drop" checked> Drop
+    </label>
+
+    <div class="container">
+        <canvas class="canvas" id="canvas"></canvas>
+
+        <div class="stats">
+            <h2>Statistics</h2>
+            <p><strong>Elapsed Time:</strong> <span id="time">0.00</span> s</p>
+            <p><strong>Current Velocity:</strong> <span id="velocity">0.00</span> m/s</p>
+            <p><strong>Last Peak/Drop Time:</strong> <span id="peakTime">—</span></p>
+            <p><strong>Bounces:</strong> <span id="bounces">0</span></p>
+        </div>
+    </div>
+
+    <br>
+    <button type="button" class="start" id="start">Start</button>
+    <button type="button" class="reset" id="reset">Reset</button>
+
+    <script src="Ball.js"></script>
+    <script src="logics.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
