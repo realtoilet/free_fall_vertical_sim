@@ -24,8 +24,7 @@ function updateStats({ time, velocity, bounces, peakTime }) {
 startBtn.addEventListener("click", () => {
     const type = document.getElementById("throw").checked ? "throw" : "drop";
     const iniVelocity = parseFloat(iniVelocityInput.value) || 1;
-    const gravity = parseFloat(gravityInput.value);
-    const g = isNaN(gravity) ? 9.8 : gravity;
+    const gravity = parseFloat(gravityInput.value) || 9.8;
 
     let startY;
     if (type === "throw") {
@@ -35,7 +34,7 @@ startBtn.addEventListener("click", () => {
     }
 
     const ball = new Ball(canvas.width / 2, startY, 15, 
-        type === "throw" ? -iniVelocity : iniVelocity, g, type);
+        type === "throw" ? -iniVelocity : iniVelocity, gravity, type);
 
     logic = new FreeFallLogic(ball, canvas, updateStats);
     logic.start();
