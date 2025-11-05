@@ -25,7 +25,7 @@ startBtn.addEventListener("click", () => {
     const type = document.getElementById("throw").checked ? "throw" : "drop";
     const iniVelocity = parseFloat(iniVelocityInput.value) || 1;
     const gravity = parseFloat(gravityInput.value);
-    const g = isNaN(gravity) ? 1 : gravity;
+    const g = isNaN(gravity) ? 9.8 : gravity;
 
     let startY;
     if (type === "throw") {
