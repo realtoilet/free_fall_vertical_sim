@@ -42,10 +42,9 @@ class FreeFallLogic {
         // Cap delta to prevent physics explosion when tab is unfocused
         if (delta > 0.05) delta = 0.05;
 
-        this.time += delta;
-
         if (!this.resting) {
             // Apply gravity
+            this.time += delta;
             this.ball.velocity += this.g * delta;
             this.ball.y += this.ball.velocity;
         }
@@ -79,6 +78,7 @@ class FreeFallLogic {
                 this.peakTime = this.time.toFixed(2) + " s";
             }
         }
+
 
         this.lastVelocity = this.ball.velocity;
 
