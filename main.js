@@ -23,8 +23,8 @@ function updateStats({ time, velocity, bounces, peakTime }) {
 
 startBtn.addEventListener("click", () => {
     const type = document.getElementById("throw").checked ? "throw" : "drop";
-    const iniVelocity = parseFloat(iniVelocityInput.value) || 1;
-    const gravity = parseFloat(gravityInput.value) || 9.8;
+    const iniVelocity = isNaN(parseFloat(gravityInput.value)) ? 1 : parseFloat(gravityInput.value);
+    const gravity = isNaN(parseFloat(gravityInput.value)) ? 9.8 : parseFloat(gravityInput.value);
 
     let startY;
     if (type === "throw") {
